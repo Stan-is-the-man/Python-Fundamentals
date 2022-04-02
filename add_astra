@@ -1,0 +1,16 @@
+import re
+
+items = []
+date = []
+calories = []
+int_cal = [int(x) for x in calories]
+data = input()
+regex_short = r"(#|\|)([a-z A-Z]+)\1(\d{2}/\d{2}/\d{2})\1(\d+)\1"
+matches = re.finditer(regex_short, data)
+for match in matches:
+    items.append(match[2])
+    date.append(match[3])
+    calories.append(int(match[4]))
+print(f"You have food to last you for: {sum(calories) // 2000} days!")
+for x in range(len(items)):
+    print(f"Item: {items[x]}, Best before: {date[x]}, Nutrition: {calories[x]}")
