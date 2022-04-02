@@ -1,0 +1,30 @@
+import re
+threshold_list = []
+emoji_list = []
+emoji_list_with_ornaments = []
+list_of_ascii = []
+text = input()
+regex_emoji = r"(:{2}|\*{2})([A-z][a-z]{2,})\1"
+regex_threshold = r"(\d)"
+matches_emoji = re.finditer(regex_emoji, text)
+for match in matches_emoji:
+    str1 = match[1] + match[2] + match[1]
+    emoji_list.append(match[2])
+    emoji_list_with_ornaments.append(str1)
+matches_threshold = re.finditer(regex_threshold, text)
+for match in matches_threshold:
+    threshold_list.append(int(match[1]))
+cool_threshold = 1
+for x in threshold_list:
+    cool_threshold *= x
+for emoji in emoji_list:
+    sum = 0
+    for letter in emoji:
+        sum += ord(letter)
+    list_of_ascii.append(sum)
+print(f"Cool threshold: {cool_threshold}")
+print(f"{len(emoji_list)} emojis found in the text. The cool ones are:")
+for x in range(len(list_of_ascii)):
+    if list_of_ascii[x] >= cool_threshold:
+        print(emoji_list_with_ornaments[x])
+        
