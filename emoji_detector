@@ -15,8 +15,10 @@ matches_threshold = re.finditer(regex_threshold, text)
 for match in matches_threshold:
     threshold_list.append(int(match[1]))
 cool_threshold = 1
+
 for x in threshold_list:
     cool_threshold *= x
+    
 for emoji in emoji_list:
     sum = 0
     for letter in emoji:
