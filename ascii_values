@@ -1,0 +1,6 @@
+data = input().split(", ")
+my_dict = {}
+
+for letter in data:
+    my_dict[letter] = ord(letter)
+print(my_dict)
