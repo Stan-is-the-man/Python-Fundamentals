@@ -1,0 +1,40 @@
+command = input()
+my_dict = {}
+total_points_of_each_student = {}
+
+while command != "no more time":
+    cmd_split = command.split(" -> ")
+    user = cmd_split[0]
+    contest = cmd_split[1]
+    points = int(cmd_split[2])
+    if user not in total_points_of_each_student:
+        total_points_of_each_student[user] = points
+
+    else:
+        if points > total_points_of_each_student[user]:
+            total_points_of_each_student[user] = points
+        else:
+            total_points_of_each_student[user] += points
+    if contest not in my_dict:
+        my_dict[contest] = {}
+        my_dict[contest][user] = points
+    if user in my_dict:
+        if points > my_dict[contest][user]:
+            my_dict[contest][user] = points
+    else:
+        my_dict[contest][user] = points
+    command = input()
+
+
+for key, value in my_dict.items():
+    print(f'{key}: {len(value)} participants')
+    x = 1
+    for k, v in sorted(my_dict[key].items(), key=lambda kv: -kv[1]):  # сорт по values на вложения
+        print(f"{x}. {k} <::> {v}")
+        x += 1
+print("Individual standings:")
+sorted_by_points = sorted(total_points_of_each_student.items(), key=lambda kv: -kv[1])
+z = 1
+for k, v in sorted_by_points:
+    print(f"{z}. {k} -> {v}")
+    z += 1
