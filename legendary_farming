@@ -13,7 +13,6 @@ while item_obtained == '':
                 junk_dict[key] = value
             else:
                 junk_dict[key] += value
-
         if legendary_dict['shards'] >= 250:
             item_obtained = "Shadowmourne"
             legendary_dict['shards'] -= 250
@@ -29,6 +28,7 @@ while item_obtained == '':
             legendary_dict['motes'] -= 250
             print("Dragonwrath obtained!")
             break
+            
 print(F"shards: {legendary_dict['shards']}")
 print(F"fragments: {legendary_dict['fragments']}")
 print(F"motes: {legendary_dict['motes']}")
