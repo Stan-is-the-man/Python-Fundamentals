@@ -1,0 +1,23 @@
+import string
+text = input().split()
+total_sum = 0
+for element in text:
+    current_num = ''
+    my_num = 0
+    first_pos = (1 + int(string.ascii_lowercase.index(element[0].lower())))
+    last_pos = (1 + int(string.ascii_lowercase.index(element[-1].lower())))
+    for symbol in element:
+        if symbol.isdigit():
+            current_num += symbol
+    if element[0].isupper() and element[0].isalpha():
+        my_num += int(current_num)
+        my_num /= first_pos
+    elif element[0].islower() and element[0].isalpha():
+        my_num += int(current_num)
+        my_num *= first_pos
+    if element[-1].isupper() and element[-1].isalpha():
+        my_num -= last_pos
+    elif element[-1].islower() and element[-1].isalpha():
+        my_num += last_pos
+    total_sum += my_num
+print(f"{total_sum:.2f}")
