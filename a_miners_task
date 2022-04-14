@@ -1,4 +1,5 @@
 dict = {}
+
 while True:
     resources = input()
     if resources == 'stop':
@@ -7,6 +8,7 @@ while True:
     if resources not in dict:
         dict[resources] = 0
     dict[resources] += quantity
+    
 for k,v in dict.items():
     print(f"{k} -> {v}")
     
