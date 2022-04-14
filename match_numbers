@@ -1,1 +1,10 @@
+import re
 
+txt = input()
+regex = r"(^|(?<=\s))-?([0]?[1-9][0-9]*)(\.\d+)?($|(?=\s))"
+matches = re.finditer(regex, txt)
+my_list = []
+for match in matches:
+    my_list.append(match.group())
+
+print(" ".join(my_list))
