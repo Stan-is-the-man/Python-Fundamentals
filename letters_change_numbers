@@ -1,6 +1,7 @@
 import string
 text = input().split()
 total_sum = 0
+
 for element in text:
     current_num = ''
     my_num = 0
