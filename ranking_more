@@ -1,0 +1,45 @@
+command = input()
+check_data = {}
+while command != "end of contests":
+    cmd_split = command.split(":")
+    contest = cmd_split[0]
+    password_for_contest = cmd_split[1]
+    check_data[contest] = password_for_contest
+    command = input()
+command_2 = input()
+user_dict = {}
+while command_2 != "end of submissions":
+    cmd_2_split = command_2.split("=>")
+    current_contest = cmd_2_split[0]
+    current_pass = cmd_2_split[1]
+    user_name = cmd_2_split[2]
+    points = int(cmd_2_split[3])
+    if current_contest in check_data:
+        if check_data[current_contest] == current_pass:
+            if user_name not in user_dict:
+                user_dict[user_name] = {}
+                user_dict[user_name][current_contest] = points
+            else:
+                if current_contest not in user_dict[user_name]:
+                    user_dict[user_name][current_contest] = points
+                else:
+                    if points > user_dict[user_name][current_contest]:
+                        user_dict[user_name][current_contest] = points
+    command_2 = input()
+max_sum = 0
+max_candidate = ''
+for student in user_dict: # влизаме за всеки студент
+    current_sum = 0
+    current_candidate = student
+    for k, v in user_dict[student].items(): # key and value във вложения dict:
+                                            # {current_contest : points} = взима се чрез user_dict[student].items()
+        current_sum += v
+    if current_sum > max_sum:
+        max_sum = current_sum
+        max_candidate = current_candidate
+print(f"Best candidate is {max_candidate} with total {max_sum} points.")
+print("Ranking:")
+for student in sorted(user_dict): # сортираме по име
+    print(student)
+    for contest, points in sorted(user_dict[student].items(),key=lambda cp: (-cp[1])): # сортираме по точки
+        print(f"#  {contest} -> {user_dict[student][contest]}")
