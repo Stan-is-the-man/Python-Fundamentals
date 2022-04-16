@@ -1,6 +1,5 @@
 raw_activation_key = input()
 command = input()
-
 while command != "Generate":
     cmd_split = command.split(">>>")
     action = cmd_split[0]
