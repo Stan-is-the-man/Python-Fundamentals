@@ -33,5 +33,4 @@ while command != "Abracadabra":
             if substring in spell:
                 spell = spell.replace(substring, "")
                 print(spell)
-
     command = input()
