@@ -5,8 +5,7 @@ while command != "Lumpawaroo":
     if "|" in command:
         cmd_split = command.split(" | ")
         force_site = cmd_split[0]
-        force_user = cmd_split[1]
-        
+        force_user = cmd_split[1]  
 
 
 
