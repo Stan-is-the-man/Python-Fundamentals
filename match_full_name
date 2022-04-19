@@ -2,4 +2,5 @@ import re
 
 txt = input()
 matches = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", txt)
+
 print(" ".join(matches))
