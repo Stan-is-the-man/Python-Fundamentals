@@ -1,0 +1,9 @@
+text = input()
+new_text = text
+current = text[0]
+new_string = current
+for x in range(1, len(text)):
+    if text[x] != current:
+        new_string += text[x]
+        current = text[x]
+print(new_string)
