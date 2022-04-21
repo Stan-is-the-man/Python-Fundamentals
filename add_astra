@@ -3,7 +3,6 @@ import re
 items = []
 date = []
 calories = []
-
 int_cal = [int(x) for x in calories]
 data = input()
 regex_short = r"(#|\|)([a-z A-Z]+)\1(\d{2}/\d{2}/\d{2})\1(\d+)\1"
