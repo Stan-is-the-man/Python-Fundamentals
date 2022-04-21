@@ -1,0 +1,7 @@
+text = input()
+
+while text != 'end':
+    rev = reversed(text)
+    rev_text = "".join(rev)
+    print(f"{text} = {rev_text}")
+    text = input()
