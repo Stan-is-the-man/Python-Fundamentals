@@ -1,0 +1,37 @@
+command = input()
+students_dict = {}
+submissions_dict = {}
+
+while command != "exam finished":
+    cmd_split = command.split('-')
+    if cmd_split[1] == 'banned':
+        student = cmd_split[0]
+        del students_dict[student]
+
+    else:
+        student = cmd_split[0]
+        language = cmd_split[1]
+        points = int(cmd_split[2])
+        if student not in students_dict:
+            students_dict[student] = points
+        else:
+            if points > students_dict[student]:
+                students_dict[student] = points
+
+        if cmd_split[1] not in submissions_dict:
+            submissions_dict[cmd_split[1]] = 1
+        else:
+            submissions_dict[cmd_split[1]] += 1
+    command = input()
+print("Results:")
+for student, points in students_dict.items():
+    print(f"{student} | {points}")
+print("Submissions:")
+for language, submissions in submissions_dict.items():
+    print(f"{language} - {submissions}")
+
+
+
+
+
+
