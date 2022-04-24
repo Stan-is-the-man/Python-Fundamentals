@@ -1,0 +1,14 @@
+import re
+
+command = input()
+total_income = 0
+my_dict = {}
+while command != "end of shift":
+    regex = r"%([A-Z]{1}[a-z]+)%<(\w+)>\w*\|(\d+)\|[a-zA-Z]*(\d+.?\d*)\$"
+    matches = re.finditer(regex, command)
+    for match in matches:
+        total_price = int(match[3]) * float(match[4])
+        total_income += int(match[3]) * float(match[4])
+        print(f"{match[1]}: {match[2]} - {total_price:.2f}")
+    command = input()
+print(f"Total income: {total_income:.2f}")
