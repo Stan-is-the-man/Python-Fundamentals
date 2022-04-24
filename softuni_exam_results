@@ -29,9 +29,3 @@ for student, points in students_dict.items():
 print("Submissions:")
 for language, submissions in submissions_dict.items():
     print(f"{language} - {submissions}")
-
-
-
-
-
-
