@@ -1,5 +1,6 @@
 n = int(input())
 students = {}
+
 for _ in range(n):
     command = input().split()
     if command[0] == "register":
