@@ -17,7 +17,6 @@ while command != "Generate":
         if flip_direction == "Upper":
             new_raw_activation_key = raw_activation_key[:start_index] + section.upper() + raw_activation_key[end_index:]
             raw_activation_key = new_raw_activation_key
-
         elif flip_direction == "Lower":
             new_raw_activation_key = raw_activation_key[:start_index] + section.lower() + raw_activation_key[end_index:]
             raw_activation_key = new_raw_activation_key
