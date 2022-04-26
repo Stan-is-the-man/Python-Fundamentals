@@ -1,0 +1,16 @@
+data = input().split(": ")
+bakery = {}
+while data[0] != "statistics":
+    product = data[0]
+    qty = int(data[1])
+    if product not in bakery:
+        bakery[product] = qty
+    else:
+        bakery[product] += qty
+    data = input().split(": ")
+print("Products in stock:")
+for key, value in bakery.items():
+    print(f"- {key}: {value}")
+print(f"Total Products: {len(bakery)}")
+sum = sum(bakery.values())
+print(f"Total Quantity: {sum}")
