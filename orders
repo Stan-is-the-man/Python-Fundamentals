@@ -13,5 +13,6 @@ while input_data != "buy":
         product_dict[product][0] = price
         product_dict[product][1] += qty
     input_data = input()
+    
 for k, v in product_dict.items():
     print(f"{k} -> {(v[1] * v[0]):.2f}")
