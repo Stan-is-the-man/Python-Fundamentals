@@ -11,6 +11,7 @@ while data[0] != "statistics":
 print("Products in stock:")
 for key, value in bakery.items():
     print(f"- {key}: {value}")
+    
 print(f"Total Products: {len(bakery)}")
 sum = sum(bakery.values())
 print(f"Total Quantity: {sum}")
