@@ -1,0 +1,14 @@
+n = int(input())
+my_dict = {}
+for _ in range(n):
+    student = input()
+    grade = float(input())
+    if student not in my_dict:
+        my_dict[student] = []
+        my_dict[student].append(grade)
+    else:
+        my_dict[student].append(grade)
+for k, v in my_dict.items():
+    avg_grade = sum(v) / len(v)
+    if avg_grade >= 4.5:
+        print(f"{k} -> {avg_grade:.2f}")
