@@ -1,0 +1,6 @@
+for_removing = input()
+word = input()
+
+while for_removing in word:
+    word = word.replace(for_removing, "")
+print(word)
