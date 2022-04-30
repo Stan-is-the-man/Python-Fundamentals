@@ -1,0 +1,17 @@
+my_courses = {}
+command = input()
+
+while ":" in command:
+    split = command.split(":")
+    name = split[0]
+    id = int(split[1])
+    course = split[2]
+    if course not in my_courses:
+        my_courses[course] = {}
+    my_courses[course][name] = id
+    command = input()
+
+searched = command.replace("_", " ")
+
+for k, v in my_courses[searched].items():
+    print(f"{k} - {v}")
