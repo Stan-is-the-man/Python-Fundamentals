@@ -16,6 +16,7 @@ if matched_words == 0:
     print("No word pairs found!")
 else:
     print(f"{matched_words} word pairs found!")
+    
 if len(list_of_mirror_words) == 0:
     print("No mirror words!")
 else:
