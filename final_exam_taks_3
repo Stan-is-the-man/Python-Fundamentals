@@ -1,0 +1,36 @@
+command = input()
+dict_of_guests = {}
+count_of_unliked_meals = 0
+while command != "Stop":
+    cmd_split = command.split("-")
+    action = cmd_split[0]
+    if action == "Like":
+        guest = cmd_split[1]
+        meal = cmd_split[2]
+        if guest not in dict_of_guests:
+            dict_of_guests[guest] = []
+            dict_of_guests[guest].append(meal)
+        else:
+            if meal not in dict_of_guests.values():
+                dict_of_guests[guest].append(meal)
+
+            else:
+                print(f"{guest} is not at the party.")
+    elif action == "Dislike":
+        guest = cmd_split[1]
+        meal = cmd_split[2]
+        if guest in dict_of_guests:
+            if meal in dict_of_guests[guest]:
+                dict_of_guests[guest].remove(meal)
+                count_of_unliked_meals += 1
+                print(f"{guest} doesn't like the {meal}.")
+            else:
+                print(f"{guest} doesn't have the {meal} in his/her collection.")
+
+        else:
+            print(f"{guest} is not at the party.")
+    command = input()
+
+for k,v in dict_of_guests.items():
+    print(f"{k}: {', '.join(v)}")
+print(f"Unliked meals: {count_of_unliked_meals}")
