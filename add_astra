@@ -14,3 +14,4 @@ for match in matches:
 print(f"You have food to last you for: {sum(calories) // 2000} days!")
 for x in range(len(items)):
     print(f"Item: {items[x]}, Best before: {date[x]}, Nutrition: {calories[x]}")
+    
