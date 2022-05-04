@@ -1,0 +1,16 @@
+list_in_str = input().split()
+numbers_to_remove = int(input())
+list_in_int = []
+for x in range(len(list_in_str)):
+    list_in_int.append(int(list_in_str[x]))
+for removed in range(numbers_to_remove):
+    minimum_number = min(list_in_int)
+    list_in_int.remove(minimum_number)
+    list_in_str.remove(str(minimum_number))
+print(', '.join(list_in_str))
+
+
+
+
+
+
