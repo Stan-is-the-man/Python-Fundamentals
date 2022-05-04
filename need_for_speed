@@ -49,3 +49,4 @@ while command != "Stop":
     command = input()
 for k, v in car_dict.items():
     print(f"{k} -> Mileage: {v[0]} kms, Fuel in the tank: {v[1]} lt.")
+    
