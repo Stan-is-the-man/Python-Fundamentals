@@ -8,9 +8,3 @@ for removed in range(numbers_to_remove):
     list_in_int.remove(minimum_number)
     list_in_str.remove(str(minimum_number))
 print(', '.join(list_in_str))
-
-
-
-
-
-
