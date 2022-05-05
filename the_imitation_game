@@ -1,0 +1,20 @@
+message = input()
+command = input()
+while command != "Decode":
+    cmd_split = command.split("|")
+    action = cmd_split[0]
+    if action == "Move":
+        number_of_letters = int(cmd_split[1])
+        new_message = message[number_of_letters:] + message[:number_of_letters]
+        message = new_message
+    elif action == "Insert":
+        index = int(cmd_split[1])
+        value = cmd_split[2]
+        new_message = message[:index] + value + message[index:]
+        message = new_message
+    elif action == "ChangeAll":
+        substring = cmd_split[1]
+        replacement = cmd_split[2]
+        message = message.replace(substring, replacement)
+    command = input()
+print(f"The decrypted message is: {message}")
