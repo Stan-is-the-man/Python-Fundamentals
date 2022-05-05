@@ -4,6 +4,5 @@ bakery = {}
 for x in range(0, len(elements), 2):
     key = elements[x]
     value = int(elements[x + 1])
-    bakery[key] = value
-    
+    bakery[key] = value    
 print(bakery)
