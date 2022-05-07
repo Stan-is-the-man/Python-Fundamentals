@@ -1,0 +1,44 @@
+number_of_pieces = int(input())
+dict_of_pieces = {}
+for _ in range(number_of_pieces):
+    text = input().split("|")
+    piece = text[0]
+    composer = text[1]
+    key = text[2]
+    dict_of_pieces[piece] = []
+    dict_of_pieces[piece].append(composer)
+    dict_of_pieces[piece].append(key)
+
+command = input()
+while command != "Stop":
+    cmd_split = command.split("|")
+    action = cmd_split[0]
+    curr_piece = cmd_split[1]
+    if action == "Add":
+        composer = cmd_split[2]
+        key = cmd_split[3]
+        if curr_piece not in dict_of_pieces:
+            dict_of_pieces[curr_piece] = []
+            dict_of_pieces[curr_piece].append(composer)
+            dict_of_pieces[curr_piece].append(key)
+            print(f"{curr_piece} by {composer} in {key} added to the collection!")
+        else:
+            print(f"{curr_piece} is already in the collection!")
+    elif action == "Remove":
+        if curr_piece in dict_of_pieces:
+            print(f"Successfully removed {curr_piece}!")
+            dict_of_pieces.pop(curr_piece)
+        else:
+            print(f"Invalid operation! {curr_piece} does not exist in the collection.")
+    elif action == "ChangeKey":
+        new_key = cmd_split[2]
+        if curr_piece in dict_of_pieces:
+            dict_of_pieces[curr_piece][1] = new_key
+            print(f"Changed the key of {curr_piece} to {new_key}!")
+        else:
+            print(f"Invalid operation! {curr_piece} does not exist in the collection.")
+    command = input()
+for k, v in dict_of_pieces.items():
+    print(f"{k} -> Composer: {v[0]}, Key: {v[1]}")
+
+
