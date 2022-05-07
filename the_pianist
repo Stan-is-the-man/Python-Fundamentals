@@ -40,5 +40,3 @@ while command != "Stop":
     command = input()
 for k, v in dict_of_pieces.items():
     print(f"{k} -> Composer: {v[0]}, Key: {v[1]}")
-
-
