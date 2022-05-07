@@ -1,0 +1,16 @@
+happines = input().split()
+factor = int(input())
+sum = 0
+happy_count = 0
+int_happines = [int(x) for x in happines]
+multiplied_list = [(int_happines[x] * factor) for x in range(len(int_happines))]
+for x in range(len(multiplied_list)):
+    sum += multiplied_list[x]
+avg_happines = sum / len(multiplied_list)
+for x in range(len(multiplied_list)):
+    if multiplied_list[x] >= avg_happines:
+        happy_count += 1
+if (len(multiplied_list) / 2) <= happy_count:
+    print(f'Score: {happy_count}/{len(multiplied_list)}. Employees are happy!')
+else:
+    print(f"Score: {happy_count}/{len(multiplied_list)}. Employees are not happy!")
