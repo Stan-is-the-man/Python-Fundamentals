@@ -11,6 +11,5 @@ while ":" in command:
     my_courses[course][name] = id
     command = input()
 searched = command.replace("_", " ")
-
 for k, v in my_courses[searched].items():
     print(f"{k} - {v}")
