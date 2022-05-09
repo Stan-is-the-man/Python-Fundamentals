@@ -1,0 +1,10 @@
+command = input()
+new_list = [0] * 11
+while command != 'End':
+    splited = command.split('-')
+    importance = int(splited[0])
+    to_do = splited[1]
+    new_list[importance] = to_do
+    command = input()
+clean_list = [x for x in new_list if x != 0]
+print(clean_list)
