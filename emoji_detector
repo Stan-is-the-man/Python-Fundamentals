@@ -24,6 +24,7 @@ for emoji in emoji_list:
     for letter in emoji:
         sum += ord(letter)
     list_of_ascii.append(sum)
+    
 print(f"Cool threshold: {cool_threshold}")
 print(f"{len(emoji_list)} emojis found in the text. The cool ones are:")
 for x in range(len(list_of_ascii)):
