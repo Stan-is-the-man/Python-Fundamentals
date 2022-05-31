@@ -1,0 +1,34 @@
+quantity = int(input())
+days_left = int(input())
+christmas_spirit = 0
+total_cost = 0
+
+
+for current_day in range(1, days_left + 1):
+    if current_day % 11 == 0:
+        quantity += 2
+    third_day_is_the_same_as_5th = False
+    if current_day % 2 == 0:
+        total_cost += quantity * 2
+        christmas_spirit += 5
+    if current_day % 3 == 0:
+        total_cost += quantity * 5 + quantity * 3
+        christmas_spirit += 13
+        third_day_is_the_same_as_5th = True
+
+    if current_day % 5 ==0:
+        total_cost += quantity * 15
+        christmas_spirit += 17
+        if third_day_is_the_same_as_5th:
+            christmas_spirit += 30
+    if current_day % 10 == 0:
+        christmas_spirit -= 20
+        total_cost += 23
+        if current_day == days_left:
+            christmas_spirit -= 30
+
+print(f'Total cost: {total_cost}')
+print(f'Total spirit: {christmas_spirit}')
+
+
+
