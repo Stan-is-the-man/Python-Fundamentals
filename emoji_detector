@@ -4,9 +4,11 @@ emoji_list = []
 emoji_list_with_ornaments = []
 list_of_ascii = []
 text = input()
+
 regex_emoji = r"(:{2}|\*{2})([A-z][a-z]{2,})\1"
 regex_threshold = r"(\d)"
 matches_emoji = re.finditer(regex_emoji, text)
+
 for match in matches_emoji:
     str1 = match[1] + match[2] + match[1]
     emoji_list.append(match[2])
