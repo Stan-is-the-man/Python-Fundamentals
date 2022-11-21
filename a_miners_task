@@ -1,4 +1,5 @@
 dict = {}
+
 while True:
     resources = input()
     if resources == 'stop':
