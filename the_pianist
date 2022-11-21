@@ -1,5 +1,6 @@
 number_of_pieces = int(input())
 dict_of_pieces = {}
+
 for _ in range(number_of_pieces):
     text = input().split("|")
     piece = text[0]
