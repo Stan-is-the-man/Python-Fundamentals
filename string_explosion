@@ -1,6 +1,7 @@
 text = input()
 new = ''
 strenght = 0
+
 for index in range(len(text)):
     if text[index] != ">" and strenght > 0:
         strenght -= 1
