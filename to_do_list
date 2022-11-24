@@ -1,5 +1,6 @@
 command = input()
 new_list = [0] * 11
+
 while command != 'End':
     splited = command.split('-')
     importance = int(splited[0])
