@@ -1,6 +1,7 @@
 legendary_dict = {'shards': 0, 'fragments': 0, 'motes': 0}
 junk_dict = {}
 item_obtained = ''
+
 while item_obtained == '':
     elements = [x.lower() for x in input().split()]
     for x in range(0, len(elements), 2):
